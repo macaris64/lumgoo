@@ -6,11 +6,12 @@ import './card.css';
 
 interface CardProps {
     image: any;
-    rating?: number;
     isInMovieDetailsPage?: boolean;
-    movieId?: string;
+    movieId?: number;
+    movieTitle?: string;
+    movieRating?: number;
 }
-const Card = observer(({image, rating, isInMovieDetailsPage, movieId}: CardProps) => {
+const Card = observer(({image, isInMovieDetailsPage, movieId, movieTitle, movieRating}: CardProps) => {
     const [isAddedToFavorites, setIsAddedToFavorites] = useState(false);
     const handleAddToFavoritesClick = () => {
         setIsAddedToFavorites(prevState => !prevState);
@@ -32,9 +33,9 @@ const Card = observer(({image, rating, isInMovieDetailsPage, movieId}: CardProps
             <div className="info p-4">
                 <div className="rating flex items-center">
                     <span className="star-icon">⭐</span>
-                    <span className="small-text ml-2">{rating}</span>
+                    <span className="small-text ml-2">{movieRating}</span>
                 </div>
-                <div className="movie-name my-2">{image.attributes.alt}</div>
+                <div className="movie-name my-2">{movieTitle}</div>
                 <div className="add-button my-2">
                     <button onClick={handleAddToFavoritesClick} className="rounded p-2">
                         {isAddedToFavorites ? 'Added' : 'Add'}

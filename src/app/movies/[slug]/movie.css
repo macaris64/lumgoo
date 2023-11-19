@@ -1,0 +1,15 @@
+.movie-page {
+    display: flex;
+    flex-direction: row;
+}
+
+.movie-image {
+    flex: 1; /* 1/4 of the space */
+    max-width: 25%;
+}
+
+.movie-info {
+    flex: 3; /* 3/4 of the space */
+    padding: 20px;
+    max-width: 75%;
+}

@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link'
-import SearchComponent from './searchComponent'
+import Search from './search'
 import {useRouter} from "next/navigation";
 
 const Header = () => {
@@ -13,7 +13,7 @@ const Header = () => {
                     {/* Example: <img src="/path-to-logo.png" alt="Logo" className="h-8 w-auto" /> */}
                 </Link>
             </div>
-            <SearchComponent />
+            <Search />
             <nav className="flex-shrink-0 text-white">
                 <button
                     className="mx-2 p-2 rounded hover:bg-gray-700"

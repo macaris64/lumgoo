@@ -1,0 +1,39 @@
+.movie-carousel {
+    width: 100%;
+    margin: 0 auto; /* Centering the carousel */
+    overflow: hidden; /* Handle any overflow */
+    padding: 0 40px; /* Space for arrows */
+    position: relative; /* Needed for absolute positioning of arrows */
+    background-color: rgba(0, 0, 0, 0.1); /* Transparent color for spacing */
+}
+
+.movie-carousel .slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie-carousel .slick-slide img {
+    max-width: 100%; /* Image width is a maximum of 100% of its container */
+    height: auto; /* Height adjusts automatically */
+    object-fit: contain; /* Image is fully contained within its box */
+}
+
+/* Arrows Styling */
+.slick-prev,
+.slick-next {
+    color: #000; /* Arrow color */
+    font-size: 24px; /* Arrow size */
+    z-index: 1;
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+}
+
+.slick-prev {
+    left: 0; /* Position within the left padding */
+}
+
+.slick-next {
+    right: 0; /* Position within the right padding */
+}

@@ -1,15 +1,17 @@
 .movie-page {
     display: flex;
-    flex-direction: row;
+    flex-direction: column; /* Stack carousel and info vertically */
+    align-items: center; /* Center items horizontally */
+    max-width: 2000px; /* Adjust the max width as necessary */
+    margin: 0 auto; /* Center the movie page */
 }
 
 .movie-image {
-    flex: 1; /* 1/4 of the space */
-    max-width: 25%;
+    width: 100%; /* Full width of the container */
+    margin-bottom: 20px; /* Spacing between carousel and movie info */
 }
 
 .movie-info {
-    flex: 3; /* 3/4 of the space */
+    width: 100%; /* Full width of the container */
     padding: 20px;
-    max-width: 75%;
 }

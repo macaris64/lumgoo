@@ -2,6 +2,7 @@ import { ActorCharacter } from './actor.model'
 import { Genre } from './genre.model'
 import { Director } from './director.model'
 import { SoundtracksBy } from "./soundtrackBy.model";
+import {MovieImage} from "@/models/image.model";
 
 export interface Movie {
     id: number;
@@ -14,5 +15,5 @@ export interface Movie {
     year: string;
     plot: string;
     soundtracksBy: SoundtracksBy[];
-    poster: string;
+    images: MovieImage[];
 }

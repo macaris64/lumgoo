@@ -1,7 +1,7 @@
 import {observer} from "mobx-react";
 import {Movie} from "@/models/movie.model";
-import Image from "next/image";
 import "./movie.css";
+import MovieCarouselComponent from "@/app/movies/[slug]/carousel";
 
 interface MovieProps {
     movie: Movie;
@@ -11,12 +11,7 @@ const MovieComponent = observer (({movie}: MovieProps) => {
     return (
         <div className="movie-page">
             <div className="movie-image">
-                <Image
-                    src="https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg"
-                    alt={`${movie.title} Poster`}
-                    width={500} // Set desired width
-                    height={750} // Set desired height
-                  />
+                <MovieCarouselComponent images={movie.images} />
             </div>
             <div className="movie-info">
                 <h1>{movie.title} ({movie.year})</h1>

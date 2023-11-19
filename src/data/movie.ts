@@ -21,7 +21,74 @@ const Movies: Movie[] = [
         year: '1994',
         plot: '',
         soundtracksBy: [{id: 1, name: 'Thomas Newman'}],
-        poster: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+        images: [
+            {
+                id: 1,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 600,
+                    height: 800,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 2,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 600,
+                    height: 800,
+                    order: 2,
+                    isMain: false
+                }
+            },
+            {
+                id: 3,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 600,
+                    height: 800,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 4,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 600,
+                    height: 800,
+                    order: 2,
+                    isMain: false
+                }
+            },
+            {
+                id: 5,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 600,
+                    height: 800,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 6,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 600,
+                    height: 800,
+                    order: 2,
+                    isMain: false
+                }
+            },
+        ],
     },
     {
         id: 2,
@@ -41,7 +108,74 @@ const Movies: Movie[] = [
         year: '1972',
         plot: '',
         soundtracksBy: [{id: 3, name: 'Nino Rota'}],
-        poster: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+        images: [
+            {
+                id: 1,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 2,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 2,
+                    isMain: false
+                }
+            },
+            {
+                id: 3,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 4,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 2,
+                    isMain: false
+                }
+            },
+            {
+                id: 5,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 6,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 2,
+                    isMain: false
+                }
+            },
+        ],
     },
     {
         id: 3,
@@ -63,7 +197,74 @@ const Movies: Movie[] = [
         year: '1974',
         plot: '',
         soundtracksBy: [{id: 3, name: 'Nino Rota'}],
-        poster: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+        images: [
+            {
+                id: 1,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 2,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 2,
+                    isMain: false
+                }
+            },
+            {
+                id: 3,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 4,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 2,
+                    isMain: false
+                }
+            },
+            {
+                id: 5,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 6,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 2,
+                    isMain: false
+                }
+            },
+        ],
     },
     {
         id: 4,
@@ -82,7 +283,74 @@ const Movies: Movie[] = [
         year: '2008',
         plot: '',
         soundtracksBy: [{id: 2, name: 'Hans Zimmer'}],
-        poster: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+        images: [
+            {
+                id: 1,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 2,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 2,
+                    isMain: false
+                }
+            },
+            {
+                id: 3,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 4,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 2,
+                    isMain: false
+                }
+            },
+            {
+                id: 5,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 6,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 2,
+                    isMain: false
+                }
+            },
+        ],
     },
     {
         id: 5,
@@ -100,7 +368,74 @@ const Movies: Movie[] = [
         year: '2014',
         plot: '',
         soundtracksBy: [{id: 2, name: 'Hans Zimmer'}],
-        poster: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+        images: [
+            {
+                id: 1,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 2,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 2,
+                    isMain: false
+                }
+            },
+            {
+                id: 3,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 4,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 2,
+                    isMain: false
+                }
+            },
+            {
+                id: 5,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 6,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 2,
+                    isMain: false
+                }
+            },
+        ],
     },
     {
         id: 6,
@@ -118,7 +453,74 @@ const Movies: Movie[] = [
         year: '2006',
         plot: '',
         soundtracksBy: [{id: 2, name: 'Hans Zimmer'}],
-        poster: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+        images: [
+            {
+                id: 1,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 2,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 2,
+                    isMain: false
+                }
+            },
+            {
+                id: 3,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 4,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 2,
+                    isMain: false
+                }
+            },
+            {
+                id: 5,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 6,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 2,
+                    isMain: false
+                }
+            },
+        ],
     },
     {
         id: 7,
@@ -138,7 +540,74 @@ const Movies: Movie[] = [
         year: '1990',
         plot: '',
         soundtracksBy: [{id: 3, name: 'Nino Rota'}],
-        poster: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+        images: [
+            {
+                id: 1,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 2,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 2,
+                    isMain: false
+                }
+            },
+            {
+                id: 3,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 4,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 2,
+                    isMain: false
+                }
+            },
+            {
+                id: 5,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 1,
+                    isMain: true
+                }
+            },
+            {
+                id: 6,
+                attributes: {
+                    src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
+                    alt: 'The Shawshank Redemption',
+                    width: 400,
+                    height: 600,
+                    order: 2,
+                    isMain: false
+                }
+            },
+        ],
     },
 ];
 

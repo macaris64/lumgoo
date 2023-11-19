@@ -4,7 +4,7 @@ import {searchStore} from "@/store/store";
 import {observer} from "mobx-react";
 import Link from 'next/link';
 
-const SearchComponent = observer (() => {
+const Search = observer (() => {
     const [showResults, setShowResults] = useState(false);
     const [searchInput, setSearchInput] = useState('');
 
@@ -42,4 +42,4 @@ const SearchComponent = observer (() => {
     );
 });
 
-export default SearchComponent;
+export default Search;

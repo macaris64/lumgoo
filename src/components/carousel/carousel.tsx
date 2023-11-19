@@ -1,7 +1,7 @@
 'use client';
 import {observer} from "mobx-react";
 import React, {useState} from "react";
-import Image from "next/image";
+import Card from "@/components/card/card";
 import Slider from "react-slick";
 import {MovieImage} from "@/models/image.model";
 
@@ -12,6 +12,9 @@ import "slick-carousel/slick/slick-theme.css";
 interface CarouselProps {
     images: MovieImage[];
     slidesToShow: number;
+    isInMovieDetailsPage?: boolean;
+    movieId?: string;
+    rating?: number;
 }
 
 interface ArrowProps {
@@ -22,7 +25,7 @@ interface ArrowProps {
     slideCount?: number;
 }
 
-const Carousel = observer(({images, slidesToShow}: CarouselProps) => {
+const Carousel = observer(({images, slidesToShow, isInMovieDetailsPage, movieId, rating}: CarouselProps) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const CustomPrevArrow: React.FC<ArrowProps> = ({ className, style, onClick }) => (
         currentSlide !== 0 && <button onClick={onClick} className={className} style={style} aria-label="←"><span>←</span></button>
@@ -51,21 +54,21 @@ const Carousel = observer(({images, slidesToShow}: CarouselProps) => {
         afterChange: setCurrentSlide,
         responsive: [
         {
-            breakpoint: 1024, // At 1024px, show 3 images
+            breakpoint: 1024,
             settings: {
                 slidesToShow: calculateSlidesToShow(slidesToShow, 1024),
                 slidesToScroll: 1,
             }
         },
         {
-            breakpoint: 600, // At 600px, show 2 images
+            breakpoint: 600,
             settings: {
                 slidesToShow: calculateSlidesToShow(slidesToShow, 600),
                 slidesToScroll: 1
             }
         },
         {
-            breakpoint: 480, // Below 480px, show 1 image
+            breakpoint: 480,
             settings: {
                 slidesToShow: calculateSlidesToShow(slidesToShow, 1024),
                 slidesToScroll: 1
@@ -74,17 +77,24 @@ const Carousel = observer(({images, slidesToShow}: CarouselProps) => {
     ]
     };
 
+    const renderSlideContent = (image: MovieImage, index: number) => {
+        return (
+            <Card
+                key={image.id}
+                image={image}
+                rating={rating} // Replace with actual rating
+                isInMovieDetailsPage={isInMovieDetailsPage}
+                movieId={movieId}
+            />
+        )
+    }
+
     return (
-        <div className="carousel-container">
+        <div className="carousel-container mt-4">
             <Slider {...settings}>
                 {images.map((image, index) => (
                     <div key={index}>
-                        <Image
-                            src={image.attributes.src}
-                            alt={image.attributes.alt}
-                            width={image.attributes.width}
-                            height={image.attributes.height}
-                        />
+                        {renderSlideContent(image, index)}
                     </div>
                 ))}
             </Slider>

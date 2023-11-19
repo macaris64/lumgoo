@@ -1,0 +1,38 @@
+.card {
+    max-width: 300px; /* Adjust as needed */
+    margin: auto; /* Center the card */
+    background-color: #121212;
+}
+
+.image-container img {
+    width: 100%; /* Full width of the container */
+    object-fit: cover; /* Cover the container */
+}
+
+.info {
+    /* Styling for the info section */
+}
+
+.star-icon {
+    /* Styling for the star icon */
+}
+
+.add-button button {
+    /* Styling for the add button */
+}
+
+.bookmark-icon {
+    position: absolute;
+    top: 8px; /* Adjust as needed */
+    left: 8px; /* Adjust as needed */
+    z-index: 10; /* Ensure it's above the image */
+    cursor: pointer; /* Change cursor on hover */
+    background-color: rgba(255, 255, 255, 0.7); /* Optional: background for visibility */
+    padding: 4px; /* Adjust as needed */
+    border-radius: 50%; /* Circular shape */
+    transition: background-color 0.3s ease;
+}
+
+.bookmark-active {
+    background-color: yellow; /* Change the color to yellow when active */
+}

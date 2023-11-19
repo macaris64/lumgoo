@@ -6,7 +6,7 @@ import {useRouter} from "next/navigation";
 const Header = () => {
     const router = useRouter()
     return (
-        <header className="bg-amber-800 p-4 flex justify-between items-center">
+        <header className="p-4 flex justify-between items-center">
             <div className="logo text-white flex-shrink-0">
                 <Link href="/">
                     {'Lumgoo!'}

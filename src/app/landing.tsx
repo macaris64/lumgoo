@@ -1,9 +1,9 @@
 import React from 'react';
 import {movieStore} from "@/store/store";
-import Carousel from "@/app/carousel";
+import Carousel from "@/components/carousel/carousel";
 import {MovieImage} from "@/models/image.model";
 
-import './carousel.css';
+import '../components/carousel/carousel.css';
 const LandingPage = () => {
     const bestMovies = movieStore.getBestMovies();
 
@@ -31,16 +31,19 @@ const LandingPage = () => {
         }
 
         return (
-            <section className="best-movies mt-8">
+            <section className="best-movies mt-4">
                 <h2 className="text-2xl font-bold">Best Movies</h2>
-                <p className="text-sm text-gray-600">Check out the top-rated movies</p>
-                <Carousel images={getMainImageFromBestMovies()} slidesToShow={getMainImageFromBestMovies().length}/>
+                <p className="text-sm small-text">Check out the top-rated movies</p>
+                <Carousel
+                    images={getMainImageFromBestMovies()}
+                    slidesToShow={5}
+                />
             </section>
         )
     }
 
     return (
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto">
             {bestMoviesSection()}
         </div>
     )

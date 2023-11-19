@@ -37,3 +37,11 @@
 .slick-next {
     right: 0; /* Position within the right padding */
 }
+
+.best-movies h2 {
+    @apply text-2xl font-bold;
+}
+
+.best-movies p {
+    @apply text-sm text-gray-600;
+}

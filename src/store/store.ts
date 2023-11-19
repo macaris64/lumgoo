@@ -2,7 +2,6 @@ import { observable, action, computed, makeAutoObservable } from "mobx";
 import Movies from '../data/movie';
 import {Movie} from "@/models/movie.model";
 
-
 class MovieStore {
     @observable movies: Movie[] = [];
     @observable loading = false;
@@ -23,6 +22,13 @@ class MovieStore {
             throw new Error(`Movie with slug ${slug} not found`)
         }
         return movie;
+    }
+
+    @action getBestMovies = () => {
+        return this.movies
+            .filter(movie => movie.imdbRating >= 8.0)
+            .sort((a, b) => b.imdbRating - a.imdbRating)
+            .slice(0, 20);
     }
 
     @action addMovie = (movie: Movie) => {

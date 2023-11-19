@@ -1,8 +1,10 @@
 import React from 'react'
-import Header from './header'
+import Landing from "@/app/landing";
 
 export default function Home() {
   return (
-    <div></div>
+    <>
+      <Landing />
+    </>
   )
 }

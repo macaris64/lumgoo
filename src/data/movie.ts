@@ -52,7 +52,7 @@ const Movies: Movie[] = [
                     width: 600,
                     height: 800,
                     order: 1,
-                    isMain: true
+                    isMain: false
                 }
             },
             {
@@ -74,7 +74,7 @@ const Movies: Movie[] = [
                     width: 600,
                     height: 800,
                     order: 1,
-                    isMain: true
+                    isMain: false
                 }
             },
             {
@@ -114,8 +114,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 1,
                     isMain: true
                 }
@@ -125,8 +125,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 2,
                     isMain: false
                 }
@@ -136,10 +136,10 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 1,
-                    isMain: true
+                    isMain: false
                 }
             },
             {
@@ -147,8 +147,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 2,
                     isMain: false
                 }
@@ -158,10 +158,10 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 1,
-                    isMain: true
+                    isMain: false
                 }
             },
             {
@@ -169,8 +169,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 2,
                     isMain: false
                 }
@@ -203,8 +203,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 1,
                     isMain: true
                 }
@@ -214,8 +214,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 2,
                     isMain: false
                 }
@@ -225,10 +225,10 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 1,
-                    isMain: true
+                    isMain: false
                 }
             },
             {
@@ -236,8 +236,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 2,
                     isMain: false
                 }
@@ -247,10 +247,10 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 1,
-                    isMain: true
+                    isMain: false
                 }
             },
             {
@@ -258,8 +258,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 2,
                     isMain: false
                 }
@@ -289,8 +289,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 1,
                     isMain: true
                 }
@@ -300,8 +300,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 2,
                     isMain: false
                 }
@@ -311,10 +311,10 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 1,
-                    isMain: true
+                    isMain: false
                 }
             },
             {
@@ -322,8 +322,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 2,
                     isMain: false
                 }
@@ -333,10 +333,10 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 1,
-                    isMain: true
+                    isMain: false
                 }
             },
             {
@@ -344,8 +344,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 2,
                     isMain: false
                 }
@@ -374,8 +374,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 1,
                     isMain: true
                 }
@@ -385,8 +385,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 2,
                     isMain: false
                 }
@@ -396,10 +396,10 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 1,
-                    isMain: true
+                    isMain: false
                 }
             },
             {
@@ -407,8 +407,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 2,
                     isMain: false
                 }
@@ -418,10 +418,10 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 1,
-                    isMain: true
+                    isMain: false
                 }
             },
             {
@@ -429,8 +429,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 2,
                     isMain: false
                 }
@@ -459,8 +459,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 1,
                     isMain: true
                 }
@@ -470,8 +470,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 2,
                     isMain: false
                 }
@@ -481,10 +481,10 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 1,
-                    isMain: true
+                    isMain: false
                 }
             },
             {
@@ -492,8 +492,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 2,
                     isMain: false
                 }
@@ -503,10 +503,10 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 1,
-                    isMain: true
+                    isMain: false
                 }
             },
             {
@@ -514,8 +514,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 2,
                     isMain: false
                 }
@@ -546,8 +546,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 1,
                     isMain: true
                 }
@@ -557,8 +557,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 2,
                     isMain: false
                 }
@@ -568,10 +568,10 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 1,
-                    isMain: true
+                    isMain: false
                 }
             },
             {
@@ -579,8 +579,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 2,
                     isMain: false
                 }
@@ -590,10 +590,10 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 1,
-                    isMain: true
+                    isMain: false
                 }
             },
             {
@@ -601,8 +601,8 @@ const Movies: Movie[] = [
                 attributes: {
                     src: 'https://posters.movieposterdb.com/15_03/2014/816692/l_816692_284eb9d5.jpg',
                     alt: 'The Shawshank Redemption',
-                    width: 400,
-                    height: 600,
+                    width: 600,
+                    height: 800,
                     order: 2,
                     isMain: false
                 }

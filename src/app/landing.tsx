@@ -18,6 +18,7 @@ const LandingPage = () => {
                         <h2 className="text-2xl font-bold landing-h2">Best Movies</h2>
                         <p className="text-sm small-text">Check out the top-rated movies</p>
                     </div>
+                    <a href={"/what-to-watch/best-movies"} className="text-blue-500 hover:text-blue-600">Full List</a>
                 </div>
                 <MovieCarousel
                     movies={bestMoviesPlain}

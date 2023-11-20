@@ -1,7 +1,8 @@
 import {observer} from "mobx-react";
 import {Movie} from "@/models/movie.model";
 import "./movie.css";
-import MovieCarouselComponent from "@/app/movies/[slug]/carousel";
+import {ImageCarousel} from "@/components/carousel/carousel";
+import React from "react";
 
 interface MovieProps {
     movie: Movie;
@@ -11,7 +12,13 @@ const MovieComponent = observer (({movie}: MovieProps) => {
     return (
         <div className="movie-page">
             <div className="movie-image">
-                <MovieCarouselComponent images={movie.images} />
+                <div className="movie-carousel">
+                    <ImageCarousel
+                        images={movie.images}
+                        slidesToShow={5}
+                        isInMovieDetailsPage={true}
+                    />
+                </div>
             </div>
             <div className="movie-info">
                 <h1>{movie.title} ({movie.year})</h1>

@@ -10,11 +10,71 @@ import './carousel.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+interface ArrowProps {
+    className: string;
+    style?: React.CSSProperties;
+    onClick?: () => void;
+    currentSlide?: number;
+    slideCount?: number;
+}
+
+const Arrow: React.FC<ArrowProps> = ({ className, style, onClick }) => (
+    <button onClick={onClick} className={className} style={style}>
+        <span>{className.includes('slick-prev') ? '←' : '→'}</span>
+    </button>
+);
+
+interface CustomSliderProps {
+    slidesToShow: number;
+    slideCount: number;
+    children: React.ReactNode;
+}
+
+const CustomSlider: React.FC<CustomSliderProps> = ({ slidesToShow, slideCount, children }) => {
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    const settings = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow,
+        slidesToScroll: 1,
+        prevArrow: <Arrow className="slick-prev" currentSlide={currentSlide} slideCount={slideCount} onClick={() => setCurrentSlide(currentSlide - 1)} />,
+        nextArrow: <Arrow className="slick-next" currentSlide={currentSlide} slideCount={slideCount} onClick={() => setCurrentSlide(currentSlide + 1)} />,
+        afterChange: setCurrentSlide,
+        responsive: [/* ...responsive settings */]
+    };
+
+    return (
+        <Slider {...settings}>
+            {children}
+        </Slider>
+    );
+};
+
 interface MovieCarouselProps {
     movies: Movie[];
     slidesToShow: number;
     isInMovieDetailsPage?: boolean;
 }
+
+export const MovieCarousel: React.FC<MovieCarouselProps> = observer(({ movies, slidesToShow, isInMovieDetailsPage }) => (
+    <div className="carousel-container mt-4">
+        <CustomSlider slidesToShow={slidesToShow} slideCount={movies.length}>
+            {movies.map((movie, index) => (
+                <div key={index}>
+                    <Card
+                        image={movie.images.find(image => image.attributes.isMain) || movie.images[0]}
+                        isInMovieDetailsPage={isInMovieDetailsPage}
+                        movieId={movie.id}
+                        movieTitle={movie.title}
+                        movieRating={movie.imdbRating}
+                    />
+                </div>
+            ))}
+        </CustomSlider>
+    </div>
+));
 
 interface ImageCarouselProps {
     images: MovieImage[];
@@ -22,164 +82,17 @@ interface ImageCarouselProps {
     isInMovieDetailsPage?: boolean;
 }
 
-interface ArrowProps {
-    className?: string;
-    style?: React.CSSProperties;
-    onClick?: () => void;
-    currentSlide?: number;
-    slideCount?: number;
-}
-
-export const MovieCarousel = observer(({movies, slidesToShow, isInMovieDetailsPage}: MovieCarouselProps) => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const CustomPrevArrow: React.FC<ArrowProps> = ({ className, style, onClick }) => (
-        currentSlide !== 0 && <button onClick={onClick} className={className} style={style} aria-label="←"><span>←</span></button>
-    );
-    const CustomNextArrow: React.FC<ArrowProps> = ({ className, style, onClick }) => (
-        currentSlide < movies.length - 1 && <button onClick={onClick} className={className} style={style} aria-label="→"><span>→</span></button>
-    );
-
-    // Function to calculate slidesToShow dynamically
-    const calculateSlidesToShow = (baseSlides: number, breakpoint: number) => {
-        // Define scale factors for different breakpoints
-        const scaleFactor = breakpoint >= 1024 ? 0.3 : breakpoint >= 600 ? 0.2 : 0.05;
-        const calculatedSlides = Math.max(1, Math.round(baseSlides * scaleFactor));
-
-        return Math.min(calculatedSlides, baseSlides);
-    };
-
-    const settings = {
-        dots: false,
-        infinite: false,
-        speed: 500,
-        slidesToShow: slidesToShow,
-        slidesToScroll: 1,
-        prevArrow: <CustomPrevArrow currentSlide={currentSlide} />,
-        nextArrow: <CustomNextArrow currentSlide={currentSlide} slideCount={movies.length} />,
-        afterChange: setCurrentSlide,
-        responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: calculateSlidesToShow(slidesToShow, 1024),
-                slidesToScroll: 1,
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: calculateSlidesToShow(slidesToShow, 600),
-                slidesToScroll: 1
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: calculateSlidesToShow(slidesToShow, 1024),
-                slidesToScroll: 1
-            }
-        }
-    ]
-    };
-
-    const renderSlideContent = (movie: Movie, index: number) => {
-        const mainImage = movie.images.find(image => image.attributes.isMain) || movie.images[0];
-        return (
-            <Card
-                key={index}
-                image={mainImage}
-                isInMovieDetailsPage={isInMovieDetailsPage}
-                movieId={movie.id}
-                movieTitle={movie.title}
-                movieRating={movie.imdbRating}
-            />
-        )
-    }
-
-    return (
-        <div className="carousel-container mt-4">
-            <Slider {...settings}>
-                {movies.map((movie, index) => (
-                    <div key={index}>
-                        {renderSlideContent(movie, index)}
-                    </div>
-                ))}
-            </Slider>
-        </div>
-    )
-});
-
-export const ImageCarousel = observer(({images, slidesToShow, isInMovieDetailsPage}: ImageCarouselProps) => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const CustomPrevArrow: React.FC<ArrowProps> = ({ className, style, onClick }) => (
-        currentSlide !== 0 && <button onClick={onClick} className={className} style={style} aria-label="←"><span>←</span></button>
-    );
-    const CustomNextArrow: React.FC<ArrowProps> = ({ className, style, onClick }) => (
-        currentSlide < images.length - 1 && <button onClick={onClick} className={className} style={style} aria-label="→"><span>→</span></button>
-    );
-
-    // Function to calculate slidesToShow dynamically
-    const calculateSlidesToShow = (baseSlides: number, breakpoint: number) => {
-        // Define scale factors for different breakpoints
-        const scaleFactor = breakpoint >= 1024 ? 0.3 : breakpoint >= 600 ? 0.2 : 0.05;
-        const calculatedSlides = Math.max(1, Math.round(baseSlides * scaleFactor));
-
-        return Math.min(calculatedSlides, baseSlides);
-    };
-
-    const settings = {
-        dots: false,
-        infinite: false,
-        speed: 500,
-        slidesToShow: slidesToShow,
-        slidesToScroll: 1,
-        prevArrow: <CustomPrevArrow currentSlide={currentSlide} />,
-        nextArrow: <CustomNextArrow currentSlide={currentSlide} slideCount={images.length} />,
-        afterChange: setCurrentSlide,
-        responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: calculateSlidesToShow(slidesToShow, 1024),
-                slidesToScroll: 1,
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: calculateSlidesToShow(slidesToShow, 600),
-                slidesToScroll: 1
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: calculateSlidesToShow(slidesToShow, 1024),
-                slidesToScroll: 1
-            }
-        }
-    ]
-    };
-
-    const renderSlideContent = (image: MovieImage, index: number) => {
-        return (
-            <Card
-                key={index}
-                image={image}
-                isInMovieDetailsPage={isInMovieDetailsPage}
-            />
-        )
-    }
-
-    return (
-        <div className="carousel-container mt-4">
-            <Slider {...settings}>
-                {images.map((image, index) => (
-                    <div key={index}>
-                        {renderSlideContent(image, index)}
-                    </div>
-                ))}
-            </Slider>
-        </div>
-    )
-});
+export const ImageCarousel: React.FC<ImageCarouselProps> = observer(({ images, slidesToShow, isInMovieDetailsPage }) => (
+    <div className="carousel-container mt-4">
+        <CustomSlider slidesToShow={slidesToShow} slideCount={images.length}>
+            {images.map((image, index) => (
+                <div key={index}>
+                    <Card
+                        image={image}
+                        isInMovieDetailsPage={isInMovieDetailsPage}
+                    />
+                </div>
+            ))}
+        </CustomSlider>
+    </div>
+));

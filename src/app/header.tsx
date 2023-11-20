@@ -1,17 +1,17 @@
 'use client';
-import Link from 'next/link'
-import Search from './search'
+import Search from './search/search'
 import {useRouter} from "next/navigation";
+import {Redirect} from "@/components/route/route";
 
 const Header = () => {
     const router = useRouter()
     return (
         <header className="p-4 flex justify-between items-center">
             <div className="logo site-title flex-shrink-0">
-                <Link href="/">
+                <Redirect href={'/'}>
                     {'Lumgoo!'}
                     {/* Example: <img src="/path-to-logo.png" alt="Logo" className="h-8 w-auto" /> */}
-                </Link>
+                </Redirect>
             </div>
             <Search />
             <nav className="flex-shrink-0 text-white">

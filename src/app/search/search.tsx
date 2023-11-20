@@ -2,7 +2,7 @@ import './search.css';
 import {useState} from "react";
 import {searchStore} from "@/store/store";
 import {observer} from "mobx-react";
-import Link from 'next/link';
+import {Redirect} from "@/components/route/route";
 
 const Search = observer (() => {
     const [showResults, setShowResults] = useState(false);
@@ -31,9 +31,9 @@ const Search = observer (() => {
               {searchStore.filteredMovies
                   .slice(0, 5) // Slice the array to only include the first 5 movies
                   .map((movie, index) => (
-                      <Link key={index} href={`/movies/${movie.slug}`} legacyBehavior>
+                      <Redirect key={index} href={`/movies/${movie.slug}`}>
                         <div><a onClick={() => setSearchInput('')}>{movie.title}</a></div>
-                      </Link>
+                      </Redirect>
                   ))
               }
             </div>

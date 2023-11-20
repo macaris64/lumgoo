@@ -41,10 +41,18 @@ button {
     color: #5799EF
 }
 
+.site-title {
+    color: #F5C518;
+}
+
 .movie-name {
     color: #FFFFFF;
 }
 
 .small-text {
     color: #BABABA;
+}
+
+.landing-h2 {
+    color: #F5C518;
 }

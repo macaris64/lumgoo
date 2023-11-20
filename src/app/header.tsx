@@ -7,7 +7,7 @@ const Header = () => {
     const router = useRouter()
     return (
         <header className="p-4 flex justify-between items-center">
-            <div className="logo text-white flex-shrink-0">
+            <div className="logo site-title flex-shrink-0">
                 <Link href="/">
                     {'Lumgoo!'}
                     {/* Example: <img src="/path-to-logo.png" alt="Logo" className="h-8 w-auto" /> */}

@@ -1,0 +1,17 @@
+/* Styles for Tabs component */
+.tab {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s;
+    color: #5799EF;
+}
+
+.tab:hover {
+    background-color: #F5C518;
+}
+
+.active-tab {
+    border-bottom: 2px solid blue;
+}

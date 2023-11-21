@@ -1,0 +1,29 @@
+.page-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    height: 100vh;
+    background-color: black;
+}
+
+.signin-card {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.submit-button {
+    align-self: center;
+    background-color: #F5C518;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #F5C518;
+}

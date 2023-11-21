@@ -23,7 +23,7 @@ const Header = () => {
                 </button>
                 <button
                     className="mx-2 p-2 rounded hover:bg-gray-700"
-                    onClick={() => router.push('/sign-in')}
+                    onClick={() => router.push('/user/sign-in')}
                 >
                     Sign in
                 </button>

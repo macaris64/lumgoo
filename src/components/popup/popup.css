@@ -1,0 +1,59 @@
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    color: #000000;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: center; /* Center the title */
+    align-items: center;
+    position: relative; /* Needed to position the close button absolutely */
+    margin-bottom: 20px; /* Increase the size of the title area */
+}
+
+.popup-header h2 {
+    font-size: 24px; /* Increase the size of the title */
+    margin: 0;
+}
+
+.popup-close-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px; /* Position the close button to the right */
+    top: 10px; /* Adjust vertical position */
+}
+
+.popup-content {
+    margin: 20px 0;
+    text-align: center; /* Align content to the middle */
+}
+
+.popup-footer {
+    text-align: center;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}

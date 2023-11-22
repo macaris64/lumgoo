@@ -2,6 +2,20 @@ import { observable, action, computed, makeAutoObservable } from "mobx";
 import Movies from '../data/movie';
 import {Movie} from "@/models/movie.model";
 
+class Store {
+    @observable isLoggedIn = false;
+
+    constructor() {
+        makeAutoObservable(this);
+    }
+
+    @action setIsLoggedIn = (value: boolean) => {
+        this.isLoggedIn = value;
+    }
+}
+
+export const store = new Store();
+
 class MovieStore {
     @observable movies: Movie[] = [];
     @observable loading = false;

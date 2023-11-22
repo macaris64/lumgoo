@@ -33,8 +33,7 @@ const fetchData = async (path: string, options: FetchOptions = { method: 'GET' }
         }
         return await response.json();
     } catch (error) {
-        console.error('Fetch error:', error);
-        throw error;
+        throw new Error('Network response was not ok');
     }
 };
 

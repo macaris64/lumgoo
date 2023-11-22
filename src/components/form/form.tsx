@@ -1,5 +1,9 @@
 'use client';
 import React, {useState} from 'react';
+import { useRouter } from 'next/navigation';
+
+import {userStore} from "@/store/user";
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons'
 
@@ -14,23 +18,53 @@ export const LoginForm: React.FC<LoginFormProps> = ({title}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showErrorPopup, setShowErrorPopup] = useState(false);
+    const [apiState, setApiState] = useState('idle');
+    const [error, setError] = useState('');
 
-    const handleSubmit = (event: { preventDefault: () => void; }) => {
+    const router = useRouter();
+
+    const isValidEmail = (email: string) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email regex
+        return regex.test(email);
+    };
+
+    const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
         if (!email || !password) {
+            setError('Please fill in all fields.');
             setShowErrorPopup(true);
             return;
         }
 
-        // Proceed with form submission logic (e.g., API call)
-        console.log('Form submitted:', { email, password });
+        if(password.length < 6) {
+            setError('Password must be at least 6 characters long.');
+            setShowErrorPopup(true);
+            return;
+        }
+
+        if (!isValidEmail(email)) {
+            setError('Please enter a valid email address.');
+            setShowErrorPopup(true);
+            return;
+        }
+
+        try {
+            setApiState('loading');
+            await userStore.loginUser(email, password);
+            setApiState('success');
+            router.push('/');
+        } catch (err) {
+            setError('Login failed. Please check your credentials.'); // Adjust the error message as needed
+            setShowErrorPopup(true);
+            setApiState('idle');
+        }
     };
 
     const renderErrorPopup = () => {
         return (
             <Popup
                 title={'Error'}
-                content={'Please fill in all required fields.'}
+                content={error}
                 onClose={() => setShowErrorPopup(false)}
             />
         );
@@ -41,11 +75,25 @@ export const LoginForm: React.FC<LoginFormProps> = ({title}) => {
             <form className="form-container" onSubmit={handleSubmit}>
                 <div className="form-field">
                     <label htmlFor="email" className="form-label">Email</label>
-                    <input type="email" id="email" className="form-input" placeholder="Email"/>
+                    <input
+                        type="text" // Changed to text to disable automatic HTML validation
+                        id="email"
+                        className="form-input"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
                 </div>
                 <div className="form-field">
                     <label htmlFor="password" className="form-label">Password</label>
-                    <input type="password" id="password" className="form-input" placeholder="Password"/>
+                    <input
+                        type="password"
+                        id="password"
+                        className="form-input"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
                 </div>
                 <div className="social-media-section">
                         <div className="social-media-buttons">
@@ -79,15 +127,11 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({ title }) => {
     const [showErrorPopup, setShowErrorPopup] = useState(false);
 
     const handleSubmit = (event: { preventDefault: () => void; }) => {
-        console.log(showErrorPopup)
         event.preventDefault();
         if (!email || !password || !username) {
             setShowErrorPopup(true);
             return;
         }
-
-        // Proceed with form submission logic (e.g., API call)
-        console.log('Form submitted:', { email, password });
     };
 
     const renderErrorPopup = () => {

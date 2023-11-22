@@ -18,22 +18,30 @@ export enum API_STATES {
     TIMEOUT = 'timeout',                        // For operations where a response is expected within a certain time frame, this state indicates that the operation took too long and was aborted.
     CANCELLED =  'cancelled',                   // Useful if the user has the option to cancel the operation (e.g., aborting a fetch request).
     VALIDATION_ERROR = 'validation_error',      // Specific to form submissions, where the error is not from the server, but due to the client-side validation of input fields.
-    NETWORK_ERROR = 'network_error',            // Specifically for errors related to network issues, separate from other types of errors that a server might return.
+    SERVER_ERROR = 'server_error',              // Specifically for errors related to network issues, separate from other types of errors that a server might return.
     UNAUTHORIZED_ERROR = 'unauthorized_error',  // Specific error states for handling authentication and authorization issues, like expired tokens or lack of permissions.
     PARTIAL_ERROR = 'partial_error',            // Sometimes, operations might partially succeed. For instance, in a batch operation, some items might be processed successfully while others fail.
     STALE_ERROR = 'stale_error',                // Indicates that the data is outdated and needs to be refreshed. This is often used in caching scenarios.
-    DEPRECATED_ERROR = 'deprecated_error'       // Indicates that the operation or the data is no longer valid or has been superseded by something else.
+    DEPRECATED_ERROR = 'deprecated_error',      // Indicates that the operation or the data is no longer valid or has been superseded by something else.
+    CONFLICT_ERROR = 'conflict_error',          // Indicates that the operation failed due to a conflict with the current state of the resource.
 }
 
 const fetchData = async (path: string, options: FetchOptions = { method: 'GET' }) => {
     try {
         const response = await fetch(`${BASE_URL}/${path}`, options);
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            const errorBody = await response.json();
+            const errorMessage = errorBody?.message || 'An error occurred';
+            const error = new Error();
+            error.message = errorMessage;
+            (error as any).status = response.status;
+            throw error;
         }
         return await response.json();
     } catch (error) {
-        throw new Error('Network response was not ok');
+        const err = new Error((error as any).message);
+        (err as any).status = (error as any).status;
+        throw err;
     }
 };
 

@@ -52,7 +52,11 @@ export const LoginForm: React.FC<LoginFormProps> = ({title}) => {
             await userStore.loginUser(email, password);
             setLoginApiState(API_STATES.SUCCESS);
         } catch (err) {
-            setError('Login failed. Please check your credentials.'); // Adjust the error message as needed
+            if (err instanceof Error) {
+                setError(err.message);
+            } else {
+                setError("Login failed. Please check your credentials.");
+            }
             setShowErrorPopup(true);
             setLoginApiState(API_STATES.UNAUTHORIZED_ERROR);
         }
@@ -168,7 +172,11 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({ title }) => {
             await userStore.registerUser(email, password, passwordConfirmation,  username, fullname);
             setRegisterApiState(API_STATES.SUCCESS);
         } catch (err) {
-            setError(`Registration failed. Please check your credentials. ${err}`);
+            if (err instanceof Error) {
+                setError(err.message);
+            } else {
+                setError("Login failed. Please check your credentials.");
+            }
             setShowErrorPopup(true);
             setRegisterApiState(API_STATES.UNAUTHORIZED_ERROR);
         }

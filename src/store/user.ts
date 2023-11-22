@@ -2,6 +2,8 @@ import {makeAutoObservable, observable} from 'mobx';
 
 import User from '@/models/user.model';
 import {login, register, verify} from "@/utils/user";
+import {API_STATES} from "@/utils/api";
+import errorMessages from "@/utils/errorMessages";
 
 class UserStore {
   @observable user: User | null = null;
@@ -80,11 +82,21 @@ class UserStore {
 
   async loginUser(email: string, password: string) {
     try {
-      const loginResponse = await login(email, password);
+      const loginResponse = await login(
+          email,
+          password
+      );
       this.setUser(loginResponse.user);
       this.setToken(loginResponse.token);
     } catch (error) {
-      throw new Error('Login failed');
+      let errorMessage = (error as any).message;
+      if (errorMessage === API_STATES.VALIDATION_ERROR) {
+        throw new Error(errorMessages.user.U_100);
+      } else if (errorMessage === API_STATES.SERVER_ERROR) {
+        throw new Error(errorMessages.server.S_100);
+      } else if (errorMessage === API_STATES.UNAUTHORIZED_ERROR) {
+        throw new Error(errorMessages.user.U_100);
+      }
     }
   }
 
@@ -103,26 +115,42 @@ class UserStore {
           username,
           fullName
       );
-      const user = registerResponse.user;
-      const token = registerResponse.token;
-      this.setUser(user);
-      this.setToken(token);
+      this.setUser(registerResponse.user);
+      this.setToken(registerResponse.token);
     } catch (error) {
-      throw new Error('Registration failed');
+      let errorMessage = (error as any).message;
+      if (errorMessage === API_STATES.VALIDATION_ERROR) {
+        throw new Error(errorMessages.user.U_112);
+      } else if (errorMessage === API_STATES.CONFLICT_ERROR) {
+        throw new Error(errorMessages.user.U_101);
+      } else if (errorMessage === API_STATES.SERVER_ERROR) {
+        throw new Error(errorMessages.server.S_100);
+      }
     }
   }
 
   async verifyToken() {
-    const token = this.getToken();
-    if (!token) {
-      this.clearUserData();
-      throw new Error('No token found');
-    }
     try {
-      await verify(token);
+      const token = this.getToken();
+      if (!token) {
+        this.clearUserData();
+        throw new Error('No token found');
+      }
+      try {
+        await verify(token);
+      } catch (error) {
+        this.clearUserData();
+        throw new Error('Token verification failed');
+      }
     } catch (error) {
-      this.clearUserData();
-      throw new Error('Token verification failed');
+      let errorMessage = (error as any).message;
+      if (errorMessage === API_STATES.UNAUTHORIZED_ERROR) {
+        throw new Error(errorMessages.user.U_112);
+      } else if (errorMessage === API_STATES.VALIDATION_ERROR) {
+        throw new Error(errorMessages.user.U_101);
+      } else if (errorMessage === API_STATES.SERVER_ERROR) {
+        throw new Error(errorMessages.server.S_100);
+      }
     }
   }
 }

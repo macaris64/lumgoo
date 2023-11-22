@@ -1,4 +1,4 @@
-import {api} from "@/utils/api";
+import {api, API_STATES} from "@/utils/api";
 import User from "@/models/user.model";
 
 export async function login(email: string, password: string) {
@@ -9,7 +9,13 @@ export async function login(email: string, password: string) {
         return { user, token };
     }
     catch (error) {
-        throw new Error('Login failed');
+        if ((error as any).status === 422) {
+            throw new Error(API_STATES.VALIDATION_ERROR);
+        } else if ((error as any).status === 401) {
+            throw new Error(API_STATES.UNAUTHORIZED_ERROR);
+        } else {
+            throw new Error(API_STATES.SERVER_ERROR);
+        }
     }
 }
 
@@ -36,7 +42,13 @@ export async function register(
         return { user, token };
     }
     catch (error) {
-        throw new Error('Registration failed');
+        if ((error as any).status === 422) {
+            throw new Error(API_STATES.VALIDATION_ERROR);
+        } else if ((error as any).status === 409) {
+            throw new Error(API_STATES.CONFLICT_ERROR);
+        } else {
+            throw new Error(API_STATES.SERVER_ERROR);
+        }
     }
 
 }
@@ -47,6 +59,12 @@ export async function verify(token: string) {
         return apiResponse.valid;
     }
     catch (error) {
-        throw new Error('Token verification failed');
+        if ((error as any).status === 401) {
+            throw new Error(API_STATES.UNAUTHORIZED_ERROR);
+        } else if ((error as any).status === 422) {
+            throw new Error(API_STATES.VALIDATION_ERROR);
+        } else {
+            throw new Error(API_STATES.SERVER_ERROR);
+        }
     }
 }

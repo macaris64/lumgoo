@@ -1,14 +1,16 @@
 'use client';
 import React, {useState} from 'react';
-import { useRouter } from 'next/navigation';
+import {useRouter} from 'next/navigation';
 
 import {userStore} from "@/store/user";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faFacebook, faGoogle} from '@fortawesome/free-brands-svg-icons'
 
 import './form.css';
 import {Popup} from "@/components/popup/page";
+
+import {API_STATES} from "@/utils/api";
 
 interface LoginFormProps {
     title: string;
@@ -18,7 +20,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({title}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showErrorPopup, setShowErrorPopup] = useState(false);
-    const [apiState, setApiState] = useState('idle');
+    const [loginApiState, setLoginApiState] = useState(API_STATES.IDLE);
     const [error, setError] = useState('');
 
     const router = useRouter();
@@ -49,14 +51,14 @@ export const LoginForm: React.FC<LoginFormProps> = ({title}) => {
         }
 
         try {
-            setApiState('loading');
+            setLoginApiState(API_STATES.LOADING);
             await userStore.loginUser(email, password);
-            setApiState('success');
+            setLoginApiState(API_STATES.SUCCESS);
             router.push('/');
         } catch (err) {
             setError('Login failed. Please check your credentials.'); // Adjust the error message as needed
             setShowErrorPopup(true);
-            setApiState('idle');
+            setLoginApiState(API_STATES.UNAUTHORIZED_ERROR);
         }
     };
 

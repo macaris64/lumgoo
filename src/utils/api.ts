@@ -47,6 +47,7 @@ const fetchData = async (path: string, options: FetchOptions = { method: 'GET' }
 
 const getHeaders = () => {
     const headers: Headers = {};
+    headers['x-api-key'] = process.env.NEXT_PUBLIC_API_KEY as string;
     headers['Content-Type'] = 'application/json';
     const token = localStorage.getItem('token');
     if (token) {

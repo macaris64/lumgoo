@@ -68,3 +68,19 @@ export async function verify(token: string) {
         }
     }
 }
+
+
+export async function me() {
+    try {
+        const apiResponse = await api.get('me');
+        return apiResponse.user;
+    } catch (error) {
+        if ((error as any).status === 401) {
+            throw new Error(API_STATES.UNAUTHORIZED_ERROR);
+        } else if ((error as any).status === 404) {
+            throw new Error(API_STATES.NO_DATA);
+        } else {
+            throw new Error(API_STATES.SERVER_ERROR);
+        }
+    }
+}

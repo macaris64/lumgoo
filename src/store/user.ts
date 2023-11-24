@@ -1,7 +1,7 @@
 import {makeAutoObservable, observable} from 'mobx';
 
 import User from '@/models/user.model';
-import {login, register, verify} from "@/utils/user";
+import {login, me, register, verify} from "@/utils/user";
 import {API_STATES} from "@/utils/api";
 import errorMessages from "@/utils/errorMessages";
 
@@ -59,10 +59,11 @@ class UserStore {
   rehydrateUser() {
     if (typeof window !== 'undefined') {
       const token = this.getToken();
-      if (token) {
+      const user = this.getUser();
+      if (token && user) {
         this.setToken(token);
+        this.setUser(JSON.parse(user));
         return token
-        // Optionally, fetch user details from the server using this token
       }
       else {
         this.clearUserData();
@@ -148,6 +149,34 @@ class UserStore {
         throw new Error(errorMessages.user.U_112);
       } else if (errorMessage === API_STATES.VALIDATION_ERROR) {
         throw new Error(errorMessages.user.U_101);
+      } else if (errorMessage === API_STATES.SERVER_ERROR) {
+        throw new Error(errorMessages.server.S_100);
+      }
+    }
+  }
+
+  async getMe() {
+    try {
+      const token = this.getToken();
+      if (!token) {
+        this.clearUserData();
+        throw new Error('No token found');
+      }
+      try {
+        const meResponse = await me();
+        console.log(meResponse)
+        //this.setUser(meResponse.user);
+        //this.setToken(meResponse.token);
+      } catch (error) {
+        this.clearUserData();
+        throw new Error('Token verification failed');
+      }
+    } catch (error) {
+      let errorMessage = (error as any).message;
+      if (errorMessage === API_STATES.UNAUTHORIZED_ERROR) {
+        throw new Error(errorMessages.user.U_103);
+      } else if (errorMessage === API_STATES.VALIDATION_ERROR) {
+        throw new Error(errorMessages.user.U_102);
       } else if (errorMessage === API_STATES.SERVER_ERROR) {
         throw new Error(errorMessages.server.S_100);
       }

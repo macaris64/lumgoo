@@ -1,6 +1,6 @@
 # 🚀 Lumgoo Portfolio
 
-A modern, responsive portfolio website built with Next.js, TypeScript, and MobX. Features a clean design, project showcase, and comprehensive testing suite.
+A contemporary, responsive portfolio website built with Next.js, TypeScript, and MobX. Features a clean design, project showcase, and comprehensive testing suite.
 
 [![CI/CD Pipeline](https://github.com/your-username/lumgoo/actions/workflows/ci.yml/badge.svg)](https://github.com/your-username/lumgoo/actions/workflows/ci.yml)
 [![Test Coverage](https://codecov.io/gh/your-username/lumgoo/branch/main/graph/badge.svg)](https://codecov.io/gh/your-username/lumgoo)

@@ -1,0 +1,89 @@
+# .cursorrules - Project Intelligence for lumgoo
+
+## 🧠 AI-Optimized Memory Bank Protocol
+
+**RULE: Memory Bank is the primary intelligence system for AI effectiveness. ALL sessions must follow this protocol.**
+
+### Priority-Based Memory Bank Structure
+
+```
+memory-bank/
+├── 🔴 CRITICAL/         # Must be 100% complete for effective AI assistance
+│   ├── project-architecture.md        # Overview of lumgoo architecture
+│   ├── routing-structure.md          # Page & URL flow
+│   └── build-deploy-pipeline.md      # GCP, Docker, and CI pipeline flows
+├── 🟡 HIGH-IMPACT/      # Target 90%+ completion
+│   ├── user-interaction-behaviors.md # User journey patterns
+│   ├── quality-checklist.md          # PR quality gates & code checks
+│   ├── test-coverage-guidelines.md   # Testing strategy & thresholds
+│   ├── component-naming-standards.md # Naming and folder structure conventions
+│   ├── developer-workflow.md         # How to build, test, commit, deploy
+│   └── environment-management.md     # .env, secrets, and config policies
+├── 🟢 FOUNDATION/       # Target 85%+ completion
+│   ├── project-overview.md           # Project goals, stack, and mission
+│   ├── readme-structure.md           # README outline and requirements
+│   ├── active-context.md             # Current session goals
+│   ├── tech-context.md               # Stack setup, tools, and dependencies
+│   └── progress-log.md               # Major milestones and next steps
+└── 📊 METRICS/
+    └── ai-effectiveness-score.md     # Context responsiveness and quality metrics
+```
+
+### CRITICAL File Standards
+
+- **Size:** 50–300 lines (ideal: 100–250)
+- **Purpose:** Architecture clarity, system entry points, and deployment flow
+- **Quality Enforcement:** CRITICAL files are validated for completeness and relevance before each milestone
+
+### HIGH-IMPACT File Standards
+
+- **Size:** ≤350 lines (Extended VERY GOOD)
+- **Purpose:** Patterns, naming, workflows, checklist logic
+- **Validation:** Referenced in CI pre-checks and PR templates
+
+### FOUNDATION File Standards
+
+- **Size:** Flexible but clear and focused
+- **Purpose:** Orientation, onboarding, overview, and cross-team context
+- **Update Strategy:** Continuously as project scope evolves
+
+### Memory Bank Session Load Order
+
+1. `METRICS/ai-effectiveness-score.md`
+2. `HIGH-IMPACT/user-interaction-behaviors.md`
+3. `CRITICAL/project-architecture.md`
+4. `FOUNDATION/active-context.md`
+5. Relevant topic-based files (auto-triggered)
+
+### AI Rules for Analysis
+
+- ✅ Reference Memory Bank before answering strategic or architectural questions
+- ✅ Use naming, testing, and checklist patterns defined in `HIGH-IMPACT`
+- ✅ Avoid generic suggestions — align with documented preferences
+- ✅ Document all new patterns learned during session in the appropriate file
+
+### Context Triggers
+
+```ts
+TOPIC_TRIGGERS = {
+  routing: "CRITICAL/routing-structure.md",
+  deployment: "CRITICAL/build-deploy-pipeline.md",
+  architecture: "CRITICAL/project-architecture.md",
+  naming: "HIGH-IMPACT/component-naming-standards.md",
+  testing: "HIGH-IMPACT/test-coverage-guidelines.md",
+  CI: "HIGH-IMPACT/quality-checklist.md",
+  workflow: "HIGH-IMPACT/developer-workflow.md",
+  environment: "HIGH-IMPACT/environment-management.md",
+};
+```
+
+### Enforcement Triggers
+
+- **Session start:** Load CRITICAL and active context
+- **PR analysis:** Always reference `quality-checklist.md`
+- **Test writing:** Follow `test-coverage-guidelines.md` (Given/When/Then)
+- **Architecture edits:** Require `project-architecture.md` update
+
+---
+
+This file ensures lumgoo aligns with intelligent memory-assisted development protocols. It will grow as the project evolves.

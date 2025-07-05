@@ -1,7 +1,14 @@
+// Test auto-deployment - Custom domain setup
+'use client';
+
+import { observer } from 'mobx-react-lite';
+import { useStore } from '@/stores';
 import Link from 'next/link';
 import ProjectSlider from '@/components/common/ProjectSlider';
 
-export default function Home() {
+const HomePage = observer(() => {
+  const { projectStore } = useStore();
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -84,4 +91,6 @@ export default function Home() {
       </section>
     </div>
   );
-} 
+});
+
+export default HomePage; 
